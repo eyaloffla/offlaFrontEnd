@@ -1,25 +1,40 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Spring MVC Tutorial by Crunchify - Hello World Spring MVC
-	Example</title>
-<style type="text/css">
-body {
-	background-image: url('http://crunchify.com/bg.png');
-}
-</style>
+<title>hi</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
 </head>
 <body>${message}
  
-	<br>
-	<br>
-	<div style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align:center;">
- 
-		Spring MCV Tutorial by <a href="http://crunchify.com">Crunchify</a>.
-		Click <a
-			href="http://crunchify.com/category/java-web-development-tutorial/"
-			target="_blank">here</a> for all Java and <a
-			href='http://crunchify.com/category/spring-mvc/' target='_blank'>here</a>
-		for all Spring MVC, Web Development examples.<br>
-	</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <div class="container">
+    
+    <br><br>
+    <form role="form" action="#" th:action="@{/welcome}" th:object="${personData}" method="post">
+    	<div class="form-group">
+    	<label for="id">ID: </label>
+    	<input type="text" th:field="*{id}" class="form-control" id="id"/>
+    	</div>
+    	
+    	<div class="form-group">
+        <label for="birthDay">Date of birth: </label> DD/MM/YYYY
+        <input type="text" th:field="*{birthDay}" class="form-control" id="birthDay"/>
+        <br> <br>
+        <h3>OR</h3>
+        <br> <br>
+        <div class="form-group">
+        <label for="finalNumber">Final Number: </label>
+        <input type="text" th:field="*{finalNumber}" class="form-control" id="finalNumber"/>
+        </div>
+        <br><br>
+        <input type="submit" value="Submit" class="btn btn-default" /> <input type="reset" value="Reset" class="btn btn-default" /></p>
+     </div>
+    </form>
+    </div>
+   	
 </body>
 </html>

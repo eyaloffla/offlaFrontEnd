@@ -1,19 +1,49 @@
 package com.offla.controller;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+import org.springframework.web.client.RestTemplate;
+
+import com.offla.entities.PersonData;
+import com.offla.utils.Util;
  
 
 @Controller
+@PropertySource("classpath:config.properties")
 public class OfflaHelloWorld {
 	
-	@RequestMapping("/welcome")
-	public ModelAndView helloWorld() {
+	@Value("${url.ispersononDB.ws}")
+	private String url;
+	
+	@RequestMapping(value= "/welcome", method=RequestMethod.GET)
+	public String PersonDataForm(Model model) {
  
-		String message = "<br><div style='text-align:center;'>"
-				+ "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is coming from CrunchifyHelloWorld.java **********</div><br><br>";
-		return new ModelAndView("welcome", "message", message);
+		model.addAttribute("personData", new PersonData());
+				
+		return "welcome";
+	}
+	
+	@RequestMapping(value= "/welcome", method=RequestMethod.POST)
+	public String PersonDataSubmit(@ModelAttribute PersonData personData, Model model) {
+         String resulBoolean = Util.BOOLEAN_FALSE;
+         
+		 RestTemplate restTemplate = new RestTemplate();
+		 String result = restTemplate.getForObject(url, String.class);
+		 
+		 if(Util.BOOLEAN_TRUE.equals(result)){
+			 resulBoolean = Util.BOOLEAN_TRUE;
+		 }
+		
+		model.addAttribute("personisindb", resulBoolean);
+				
+		return "personisindb";
 	}
 
 }

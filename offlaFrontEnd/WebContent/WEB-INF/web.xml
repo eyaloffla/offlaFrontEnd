@@ -17,7 +17,7 @@
         <servlet-name>offla</servlet-name>
         <url-pattern>/welcome.jsp</url-pattern>
         <url-pattern>/welcome.html</url-pattern>
-        <url-pattern>*.html</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
   
 </web-app>
