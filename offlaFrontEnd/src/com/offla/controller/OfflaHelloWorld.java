@@ -16,7 +16,7 @@ import com.offla.utils.Util;
  
 
 @Controller
-@PropertySource("classpath:config.properties")
+@PropertySource("classpath:/com/offla/controller/application.properties")
 public class OfflaHelloWorld {
 	
 	@Value("${url.ispersononDB.ws}")

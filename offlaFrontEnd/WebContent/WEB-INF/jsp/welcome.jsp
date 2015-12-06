@@ -6,10 +6,14 @@
 </head>
 <body>${message}
  
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     
     <div class="container">
     
@@ -31,7 +35,8 @@
         <input type="text" th:field="*{finalNumber}" class="form-control" id="finalNumber"/>
         </div>
         <br><br>
-        <input type="submit" value="Submit" class="btn btn-default" /> <input type="reset" value="Reset" class="btn btn-default" /></p>
+        <input type="submit" value="Submit" class="btn btn-primary" /> 
+        <input type="reset" value="Reset" class="btn btn-default" /></p>
      </div>
     </form>
     </div>
