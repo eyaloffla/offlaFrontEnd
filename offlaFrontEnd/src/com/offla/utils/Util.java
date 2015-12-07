@@ -19,4 +19,14 @@ public class Util {
 		return idI;
 	}
 	
+	public static boolean isBlankNot(String s){
+		boolean b = Boolean.FALSE;
+		
+		if(StringUtils.isNotBlank(s)){
+			b = Boolean.TRUE;
+		}
+		
+		return b;
+	}
+	
 }
