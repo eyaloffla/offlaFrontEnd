@@ -18,6 +18,11 @@
 <body>${message}
  
 <div class="container">
+
+ <table>
+ <tr>
+ <td width="120%">
+ 
     
     <br><br>
     <form:form action="${localDomain}/welcome" commandName="personData" method="post">
@@ -39,9 +44,13 @@
         <br><br>
         <input type="submit" value="Submit" class="btn btn-primary" /> 
         <input type="reset" value="Reset" class="btn btn-default" /></p>
-     </div>
+     
     </form:form>
-    </div>
+    
+    </td>
+ </tr>
+ </table>
    	
+   </div>
 </body>
 </html>

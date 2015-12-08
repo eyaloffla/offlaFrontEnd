@@ -83,8 +83,6 @@ public class Welcome {
 		return "personisindb";
 	}
 	
-	private void parameterSeter(String p){
-		
-	}
+	
 
 }
