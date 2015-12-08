@@ -1,6 +1,7 @@
 package com.offla.controller;
 
 
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -29,10 +30,11 @@ public class Welcome {
 	private final String url = Config.URL_IS_PERSON_ON_DB_WS;
 	private String urlRemote;
 	
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public String PersonDataForm(Model model) {
- 
-		model.addAttribute("localDomain" , Config.DOMAIN_LOCAL);
+        
+		model.addAttribute("localDomain" , Config.DOMAIN_FRONT_END);
 		model.addAttribute("personData", new PersonData());
 				
 		return "welcome";

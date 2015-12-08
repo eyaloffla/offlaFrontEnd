@@ -2,7 +2,9 @@ package com.offla.controller;
 
 public class Config {
 	
-	public static final String DOMAIN_LOCAL = "http://localhost:9080/offlaFrontEnd";
+	public static final String DOMAIN = "http://localhost:9080";
+	
+	public static final String DOMAIN_FRONT_END = DOMAIN + "/offlaFrontEnd";
 	
 	public static final String DOMAIN_ROOT_REMOTE_WS = "http://localhost:9080/offlaserver01WS";
 	
