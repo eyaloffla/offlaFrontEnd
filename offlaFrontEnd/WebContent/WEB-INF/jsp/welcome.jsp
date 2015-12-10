@@ -32,7 +32,7 @@
     	</div>
     	
     	<div class="form-group">
-        <label for="birthDay">Date of birth: </label> DD/MM/YYYY
+        <label for="birthDay">Date of birth: </label> DDMMYYYY
         <form:input path="birthDay" class="form-control" id="birthDay"/>
         <br> <br>
         <h3>OR</h3>
@@ -43,7 +43,7 @@
         </div>
         <br><br>
         <input type="submit" value="Submit" class="btn btn-primary" /> 
-        <input type="reset" value="Reset" class="btn btn-default" /></p>
+        <input type="reset" value="Reset" class="btn btn-default" />
      
     </form:form>
     
