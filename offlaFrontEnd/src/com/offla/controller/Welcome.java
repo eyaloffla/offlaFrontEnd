@@ -2,6 +2,8 @@ package com.offla.controller;
 
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -28,13 +30,23 @@ public class Welcome {
 	
 	
 	private final String url = Config.URL_IS_PERSON_ON_DB_WS;
+	private final String urlIp = Config.URL_IS_IP_APROVED;
 	private String urlRemote;
 	
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String PersonDataForm(Model model) {
+	public String PersonDataForm(Model model, HttpServletRequest request) {
         
-		model.addAttribute("localDomain" , Config.DOMAIN_FRONT_END);
+		System.out.println("The ip is: " + request.getRemoteAddr());
+		
+		model.addAttribute("domainResources" , Config.DOMAIN_RESOURCES);
+		
+		if(!isIpAproved(request.getRemoteAddr())){
+			
+			return "locationinvalid";
+		}
+		
+		model.addAttribute("domain" , Config.DOMAIN_FRONT_END);
 		model.addAttribute("personData", new PersonData());
 				
 		return "welcome";
@@ -63,7 +75,6 @@ public class Welcome {
          
 		 RestTemplate restTemplate = new RestTemplate();
 		 
-		 
 		 HttpHeaders headers = new HttpHeaders();
 		 headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 		
@@ -83,6 +94,31 @@ public class Welcome {
 		model.addAttribute("personisindb", resulBoolean);
 				
 		return "personisindb";
+	}
+	
+	private boolean isIpAproved(String ip){
+		
+		 boolean result = false;
+		
+		 RestTemplate restTemplate = new RestTemplate();
+		 
+		 HttpHeaders headers = new HttpHeaders();
+		 headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+		
+		 HttpEntity<?> entity = new HttpEntity<>(headers);
+
+		 urlRemote =  urlIp + "/" + ip;                                  
+
+		 HttpEntity<String> response = restTemplate.exchange(urlRemote, HttpMethod.GET, entity, String.class);
+		 String responseFromWS = response.getBody();
+		 
+		 System.out.print(responseFromWS);
+		 
+	     if(Util.BOOLEAN_TRUE.equals(responseFromWS)){
+			 result = true;
+		 }
+	 return result;
+		
 	}
 	
 	

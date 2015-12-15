@@ -7,12 +7,12 @@
 <head>
 
 <title>hi</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="${domainResources}/css/bootstrap.min.css">
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="${domainResources}/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+<script src="${domainResources}/js/bootstrap.min.js" ></script>
 
 </head>
 <body>${message}
@@ -25,7 +25,7 @@
  
     
     <br><br>
-    <form:form action="${localDomain}/welcome" commandName="personData" method="post">
+    <form:form action="${domain}/welcome" commandName="personData" method="post">
     	<div class="form-group">
     	<label for="id">ID: </label>
     	<form:input path="id" class="form-control"/>
