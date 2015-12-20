@@ -2,11 +2,10 @@ package com.offla.controller;
 
 public class Config {
 	
-	//public static final String DOMAIN = "http://websphere-application-server-03.mybluemix.net";
+	public static final String DOMAIN = "http://offla01.mybluemix.net";
 	
 	
-	
-	public static final String DOMAIN = "http://localhost:9080";
+	//public static final String DOMAIN = "http://localhost:9080";
 	
 	public static final String DOMAIN_RESOURCES = DOMAIN + "/resources";
 	
