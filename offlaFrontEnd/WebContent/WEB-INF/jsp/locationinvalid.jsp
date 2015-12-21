@@ -4,7 +4,7 @@
 <html>
 <head>
 
-<title>User not allowed</title>
+<title>User not allowed ${referral}</title>
 <link rel="stylesheet" href="${domainResources}/css/bootstrap.min.css">
 <!-- Optional theme -->
 <link rel="stylesheet" href="${domainResources}/css/bootstrap-theme.min.css">

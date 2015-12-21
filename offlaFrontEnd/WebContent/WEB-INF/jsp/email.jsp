@@ -30,8 +30,8 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="person">Person on Data Base</a></li>
-              <li><a href="email">Email Validator</a></li>
+              <li ><a href="person">Person on Data Base</a></li>
+              <li class="active"><a href="email">Email Validator</a></li>
               
            </ul>
            </div>
@@ -40,12 +40,30 @@
 <!-- Static navbar -->
 
 
-</div>
-
-<script src="${domainResources}/js/bootstrap.min.js" ></script>
-
+ <table>
+ <tr>
+ <td width="120%">
+ 
+    
+    <br><br>
+    <form:form action="${domain}/email" commandName="email" method="post">
+    	<div class="form-group">
+    	<label for="email">Validate email: </label>
+    	<form:input path="email" class="form-control"/>
+    	</div>
+    	
+    	
+        <br><br>
+        <input type="submit" value="Submit" class="btn btn-primary" /> 
+        <input type="reset" value="Reset" class="btn btn-default" />
+     
+    </form:form>
+    
+    </td>
+ </tr>
+ </table>
+   	
+   </div>
+   <script src="${domainResources}/js/bootstrap.min.js" ></script>
 </body>
 </html>
-
-
- 

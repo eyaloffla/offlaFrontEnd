@@ -25,8 +25,8 @@ import com.offla.utils.Util;
  
 
 @Controller
-@RequestMapping(value= "/welcome")
-public class Welcome {
+@RequestMapping(value= "/person")
+public class PersonController {
 	
 	
 	private final String url = Config.URL_IS_PERSON_ON_DB_WS;
@@ -35,13 +35,16 @@ public class Welcome {
 	
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String PersonDataForm(Model model, HttpServletRequest request) {
+	public String personDataForm(Model model, HttpServletRequest request) {
         
-		System.out.println("The ip is: " + request.getRemoteAddr());
+		String referral = request.getRemoteAddr();
+		
+		System.out.println("The ip is: " + referral);
 		
 		model.addAttribute("domainResources" , Config.DOMAIN_RESOURCES);
+		model.addAttribute("referral", referral);
 		
-		if(!isIpAproved(request.getRemoteAddr())){
+		if(!isIpAproved(referral)){
 			
 			return "locationinvalid";
 		}
@@ -49,13 +52,13 @@ public class Welcome {
 		model.addAttribute("domain" , Config.DOMAIN_FRONT_END);
 		model.addAttribute("personData", new PersonData());
 				
-		return "welcome";
+		return "person";
 	}
 	
 	
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public String PersonDataSubmit(@ModelAttribute("personData") PersonData personData, Model model) {
+	public String personDataSubmit(@ModelAttribute("personData") PersonData personData, Model model) {
          
 		 String resulBoolean = "False";
          
@@ -92,6 +95,7 @@ public class Welcome {
 		 }
 		
 		model.addAttribute("personisindb", resulBoolean);
+		model.addAttribute("domainResources" , Config.DOMAIN_RESOURCES);
 				
 		return "personisindb";
 	}
