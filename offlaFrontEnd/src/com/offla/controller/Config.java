@@ -3,11 +3,11 @@ package com.offla.controller;
 public class Config {
 	
 	
-	public static final String LOCATION = "1";  // 1 local    0 Cloud  
+	public static final String LOCATION = "0";  // 1 local    0 Cloud  
 	
 	public static final String DOMAIN_LOCAL = "http://localhost:9080";
 	
-	public static final String DOMAIN_REMOTE_BUSINESS_LOGIC = "";
+	public static final String DOMAIN_REMOTE_BUSINESS_LOGIC = "http://offlabusinessLogic.mybluemix.net";
 	
 	public static final String DOMAIN_BACKEND_REMOTE = "http://backendoffla.mybluemix.net";
 	
@@ -15,7 +15,6 @@ public class Config {
 	
 	public static final String DOMAIN_RESOURCES_REMOTE = "http://offlaresources.mybluemix.net";
 	
-	public static final String DOMAIN_RESOURCES_REMOTE_BUSINESS_LOGIC = "";
 	
 	public static final String DOMAIN_RESOURCES = DOMAIN_RESOURCES_REMOTE + "/resources";
 	
