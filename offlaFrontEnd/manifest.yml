@@ -1,6 +1,6 @@
 ---
 applications:
-- name: offlaFrontEnd
+- name: offlaFE
   memory: 512M
-  host: offlaFrontEnd
+  host: offlafrontend
   domain: mybluemix.net

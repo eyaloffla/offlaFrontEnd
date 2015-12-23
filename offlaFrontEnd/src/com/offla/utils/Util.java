@@ -8,6 +8,9 @@ public class Util {
 	public static final String BOOLEAN_TRUE = "1";
 	public static final String BOOLEAN_FALSE = "0";
 	
+	public static final String BOOLEAN_TRUE_STRING = "TRUE";
+	public static final String BOOLEAN_FALSE_STRING = "FALSE";
+	
 	
 	public static int stringToInt(String id) {
 		int idI = 0;

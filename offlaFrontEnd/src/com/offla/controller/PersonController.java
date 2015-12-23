@@ -30,7 +30,7 @@ public class PersonController {
 	
 	
 	private final String url = Config.URL_IS_PERSON_ON_DB_WS;
-	private final String urlIp = Config.URL_IS_IP_APROVED;
+	private final String urlIp = Config.URL_IS_IP_APPROVED;
 	private String urlRemote;
 	
 	
@@ -60,7 +60,7 @@ public class PersonController {
 	@RequestMapping(method=RequestMethod.POST)
 	public String personDataSubmit(@ModelAttribute("personData") PersonData personData, Model model) {
          
-		 String resulBoolean = "False";
+		 String resulBoolean = Util.BOOLEAN_FALSE_STRING;
          
          String id = "0";
          String birthDay ="0";
@@ -91,7 +91,7 @@ public class PersonController {
 		 System.out.print(responseFromWS);
 		 
 	if(Util.BOOLEAN_TRUE.equals(responseFromWS)){
-			 resulBoolean = "True";
+			 resulBoolean = Util.BOOLEAN_TRUE_STRING;
 		 }
 		
 		model.addAttribute("personisindb", resulBoolean);

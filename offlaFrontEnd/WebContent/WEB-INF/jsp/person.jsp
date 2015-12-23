@@ -59,6 +59,7 @@ ${message}
     	<div class="form-group">
         <label for="birthDay">Date of birth: </label> DDMMYYYY
         <form:input path="birthDay" class="form-control" id="birthDay"/>
+        </div>
         <br> 
         <h3>OR</h3>
         <br> 
