@@ -15,7 +15,6 @@ public class Config {
 	
 	public static final String DOMAIN_RESOURCES_REMOTE = "http://offlaresources.mybluemix.net";
 	
-	
 	public static final String DOMAIN_RESOURCES = DOMAIN_RESOURCES_REMOTE + "/resources";
 	
 	public static final String DOMAIN_FRONT_END = getDomain() + "/offlaFrontEnd";
