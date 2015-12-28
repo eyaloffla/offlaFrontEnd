@@ -111,7 +111,11 @@ public class PersonController {
 		
 		 HttpEntity<?> entity = new HttpEntity<>(headers);
 
-		 urlRemote =  urlIp + "/" + ip;                                  
+		 urlRemote =  urlIp + "/" + ip;   
+		 
+		 //org.springframework.web.client.RestTemplate template = new org.springframework.web.client.RestTemplate();
+		 //template.setRequestFactory(new org.springframework.http.client.SimpleClientHttpRequestFactory());
+		 //CAN BE FASTER BUT NOT SO SECURE IT CAN FAILED SOMETIMES
 
 		 HttpEntity<String> response = restTemplate.exchange(urlRemote, HttpMethod.GET, entity, String.class);
 		 String responseFromWS = response.getBody();
