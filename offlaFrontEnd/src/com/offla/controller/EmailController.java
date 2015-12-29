@@ -67,7 +67,7 @@ public class EmailController {
 
 		 urlRemote =  urlEmail + "/" + email;                                  
 
-		 HttpEntity<String> response = restTemplate.exchange(urlRemote, HttpMethod.GET, entity, String.class);
+		 HttpEntity<String> response = restTemplate.exchange(urlRemote, HttpMethod.POST, entity, String.class);
 		 String responseFromWS = response.getBody();
 		 
 		 System.out.print(responseFromWS);
